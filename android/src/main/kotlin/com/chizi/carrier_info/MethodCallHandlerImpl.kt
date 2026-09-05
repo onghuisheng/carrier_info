@@ -108,7 +108,7 @@ internal class MethodCallHandlerImpl(context: Context, activity: Activity?) : Me
 
             if (subsManager.activeSubscriptionInfoList != null) {
 
-                for (subsInfo in subsManager.activeSubscriptionInfoList) {
+                for (subsInfo in subsManager.activeSubscriptionInfoList!!) {
                     if (subsInfo != null) {
                         try {
                             val data = hashMapOf(
@@ -294,7 +294,7 @@ internal class MethodCallHandlerImpl(context: Context, activity: Activity?) : Me
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             // registeredCellInfo elements are ordered, simSlot 0 information will be in the index 0
             val registeredCellInfo: ArrayList<CellInfo> = ArrayList()
-            for (cellInfo in telephonyManager.allCellInfo) {
+            for (cellInfo in telephonyManager.allCellInfo!!) {
                 if (cellInfo.isRegistered) {
                     registeredCellInfo.add(cellInfo)
                 }
